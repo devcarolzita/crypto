@@ -1,0 +1,14 @@
+body {
+  background-color: rgba(40, 44, 51, 1);
+  color: white;
+}
+
+.content-box {
+  background-color: rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  gap: 35px;
+  padding: 20px;
+  justify-content: center;
+}
