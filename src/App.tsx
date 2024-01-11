@@ -1,19 +1,14 @@
 
 import './App.css'
+import Content from './Components/Content'
 
 function App() {
 
   return (
     <>
     <p>Header</p>
-     <p>Aqui é a home</p>
-      <div>
-        <div>
-          <ul>
-            <li> <i></i> <p>nome</p> <p>2,99</p></li>
-          </ul>
-        </div>
-      </div>
+     <h1>Coins Crypto!</h1>
+      <Content/>
       <p>footer</p>
     </>
   )

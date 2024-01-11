@@ -1,0 +1,32 @@
+.coins-box-img {
+  width: 50px;
+}
+
+.coins-box {
+  background-color: rgba(0, 0, 0, 0.672);
+  width: 10%;
+  padding: 20px;
+
+}
+.coins-content { 
+  background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.coins-infographic-green { 
+  color: green;
+}
+
+.coins-infographic-red { 
+  color: red;
+}
+
+/* display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  width: 25%; 
+  box-sizing: border-box; 
+} */
