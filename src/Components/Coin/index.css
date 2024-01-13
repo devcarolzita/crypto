@@ -6,11 +6,36 @@
   background-color: rgba(0, 0, 0, 0.672);
   width: 10%;
   padding: 20px;
+  opacity: 0;
+  /* visibility: hidden; */
+  transform: translateY(20px);
+
 
 }
-.coins-content { 
-  background-color: rgba(0, 0, 0, 0.2);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    visibility: visible;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* Aplicar animação a todos os cards */
+
+.coins-box {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.coins-box:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.coins-box:nth-child(event) {
+  animation-delay: 0.4s;
 }
 
 .coins-infographic-green { 

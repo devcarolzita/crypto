@@ -4,8 +4,6 @@ import './index.css'
 import Swal from 'sweetalert2';
 
 const Content = () => {
-  //como fazer o fetch e ver o que a api ta retornando
-// Import 'node-fetch' if you are using this in a Node.js environment
 
 const [cryptoData, setCryptoData] = useState<any[]>([]);
 
@@ -13,7 +11,7 @@ const [cryptoData, setCryptoData] = useState<any[]>([]);
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000');
+        const response = await fetch('http://localhost:3000');
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -33,14 +31,15 @@ const [cryptoData, setCryptoData] = useState<any[]>([]);
         });
       }
     };
-
+    console.log(cryptoData ,'teste');
+    
     fetchData();
   }, []);    
     
 
   return (
     <div className='content-box'>{
-    cryptoData[0] ?   cryptoData.map((element) => <Coin name={element.name} price={element.quote.USD.price} imgSrc={element.id} key={element.id} percent1hours={element.quote.USD.percent_change_1h} /> ) : 'elemgento nao encontrado'
+    cryptoData[0] ?   cryptoData.map((element) => <Coin name={element.name} price={element.quote.USD.price} imgSrc={element.id} key={element.id} percent1hours={element.quote.USD.percent_change_1h}  oneHour={element.quote.USD.percent_change_1h} twentFHour={element.quote.USD.percent_change_24h} sevenDays={element.quote.USD.percent_change_7d} /> ) : 'elemgento nao encontrado'
   }
   </div>
   )

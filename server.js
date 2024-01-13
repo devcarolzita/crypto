@@ -10,7 +10,7 @@ dotenv.config();
 // console.log(apiKey, 'apiiii');
 
 const app = express();
-const PORT = 4000;
+const PORT = 3000;
 
 // Middleware para habilitar o CORS
 app.use((req, res, next) => {
