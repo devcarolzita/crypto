@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# Coin Crypto!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Boas vindas ao projeto Coin Crypto! Este projeto utiliza React + Vite para criar uma aplicação que consome a API marketcap.com. Este README fornecerá informações sobre como começar a usar o projeto.
 
-Currently, two official plugins are available:
+## Configuração Inicial
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 
-## Expanding the ESLint configuration
+1. Clone o repositório:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/seu-usuario/nome-do-seu-projeto.git
+cd nome-do-seu-projeto
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Instale as dependências
+```bash
+npm install
+```
 
+## Configurando a API marketcap.com
+Para usar a API marketcap.com, você precisará obter uma chave de API. Siga estas etapas:
 
+1. Vá para marketcap.com.
+   * Crie uma conta ou faça login, se já tiver uma.
+   * Navegue até a seção de API e obtenha sua chave de API.
+
+2. Configurando a Aplicação
+     * Crie um arquivo ```.env``` na raiz do projeto e adicione sua chave de API: ```API_KEY=your_api_key```
+  
+Obs: Essa API é server side programmig por isso os passos abaixo:
+
+3. Inicie o servidor
+   * ```node server.js```
+   * E depois a aplicação ```npm run dev```

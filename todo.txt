@@ -1,0 +1,6 @@
+1. Pagina para cada moeda
+-- criar a rota ✅
+-- criar a página  ✅
+-- ao clicar em ver mais cria direciona para pagina  ✅
+2.fazer os testes
+3.instalar typescript

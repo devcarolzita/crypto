@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { Link } from 'react-router-dom';
+
 import './index.css'
 type CoinProps = {
   name: string,
@@ -11,32 +13,30 @@ type CoinProps = {
 }
 
 
-
 const Coin = ({ name, price, imgSrc, percent1hours, ...props }: CoinProps) => {
   const [imgUrl, setImg] = useState('')
 
   const fetchImg = async (img: string) => {
     const response = await fetch(`https://s2.coinmarketcap.com/static/img/coins/64x64/${img}.png`)
     setImg(response.url);
-  }
-
-  console.log(props.oneHour + props.twentFHour + props.sevenDays, 'total');
-  // console.log(props.twentFHour, '1h');
-  // console.log(props.sevenDays, '7');
-  
+  } 
 
   useEffect(() => {
     fetchImg(imgSrc);
   }, [])
 
   return (
+
+    <>
+     <Link to={`/details/1`} >
+      <div>
+
     <div className="coins-box">
 
       <div className="coins-content">
         <img src={imgUrl} alt="Icone" className="coins-box-img" />
         <p className="coins-box-name">{name} </p>
         <p className="coins-box-price">$:{price.toFixed(2)}</p>
-
       </div>
       {
         Math.sign(percent1hours) === 1 ?
@@ -47,6 +47,9 @@ const Coin = ({ name, price, imgSrc, percent1hours, ...props }: CoinProps) => {
       </Sparklines>
 
     </div>
+      </div>
+      </Link>
+    </>
   )
 }
 
