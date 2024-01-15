@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.2",
     "react-sparklines": "^1.7.0",
-    "sweetalert2": "^11.10.2"
+    "sweetalert2": "^11.10.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.2.0",

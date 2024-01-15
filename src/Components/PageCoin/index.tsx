@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 const API_NEWS = import.meta.env.VITE_API_NEWS_KEY;
 import { Card, Carousel } from 'flowbite-react';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2'
 
 
 const PageCoin = () => {
@@ -15,14 +16,14 @@ const PageCoin = () => {
       const dados = await resposta.json();
 
       setArticles([...dados.articles])
-      // console.log(dados.articles);
       if (articles.length === 0) {
         setNewRequisi(true);
       }
-    } catch (error) { console.log(error) }
-
-    console.log(articles);
-
+    } catch (error) { Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `Something went wrong! ${error}`,
+    }); }
   }
 
   useEffect(() => {

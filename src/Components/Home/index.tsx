@@ -17,9 +17,7 @@ const [cryptoData, setCryptoData] = useState<any[]>([]);
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const {data} = await response.json();
-    
-        console.log(data[0].quote.USD.percent_change_1h);
-        
+            
         setCryptoData(data);
       
 
@@ -30,9 +28,7 @@ const [cryptoData, setCryptoData] = useState<any[]>([]);
           text: `Something went wrong!${error}`,
         });
       }
-    };
-    console.log(cryptoData ,'teste');
-    
+    };    
     fetchData();
   }, []);    
     
