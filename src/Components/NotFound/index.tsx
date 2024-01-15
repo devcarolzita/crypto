@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../assets/404.gif'
 const NotFound = () => {
   return (

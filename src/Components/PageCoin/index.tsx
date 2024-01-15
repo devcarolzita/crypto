@@ -1,29 +1,43 @@
-import { useParams } from 'react-router-dom';
 const API_NEWS = import.meta.env.VITE_API_NEWS_KEY;
 import { Card, Carousel } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 
+type articleProps = {
+  author:string,
+  content:string,
+  description:string,
+  publishedAt:string,
+  source:string,
+  title:string,
+  url:string,
+  urlToImage: string
+}
 
 const PageCoin = () => {
   // const params = useParams();
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<articleProps []>([]);
   const [newRequisi, setNewRequisi] = useState(false);
 
+  
   const fetchNews = async () => {
     try {
       const resposta = await fetch(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${API_NEWS}`)
       const dados = await resposta.json();
 
       setArticles([...dados.articles])
+      console.log(articles);
+
       if (articles.length === 0) {
         setNewRequisi(true);
       }
-    } catch (error) { Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: `Something went wrong! ${error}`,
-    }); }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Something went wrong! ${error}`,
+      });
+    }
   }
 
   useEffect(() => {
@@ -60,11 +74,11 @@ const PageCoin = () => {
               </div>
 
             </Carousel>
-          </div> 
-          </div>: 'teste'
+          </div>
+        </div> : 'teste'
       }
 
-          {/* {
+      {/* {
         articles.length > 1 ? 
        articles.map((article, index) => {
         return <div key={article.source.id + index} className="h-56 sm:h-64 xl:h-80 2xl:h-96">
@@ -84,7 +98,7 @@ const PageCoin = () => {
        }) : 'teste'
       } */}
 
-       
+
     </div>
   )
 }
