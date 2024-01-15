@@ -4,3 +4,5 @@
 -- ao clicar em ver mais cria direciona para pagina  ✅
 2.fazer os testes
 3.instalar typescript
+4. tirar os consoles log
+5. arrumar os css 
