@@ -4,10 +4,9 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
-dotenv.config();
+const SERVER_KEY = import.meta.env.VITE_SERVER_KEY ;
 
-// const apiKey = process.env.API_KEY;
-// console.log(apiKey, 'apiiii');
+dotenv.config();
 
 const app = express();
 const PORT = 3000;
@@ -26,7 +25,7 @@ app.use('/', async (req, res) => {
     const response = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
       method: 'GET',
       headers: {
-        'X-CMC_PRO_API_KEY': '9c516cec-b02d-4000-8198-1e3cfddb0f3b',
+        'X-CMC_PRO_API_KEY': SERVER_KEY,
       },
     });
 
