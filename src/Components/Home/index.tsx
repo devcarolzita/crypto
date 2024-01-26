@@ -3,9 +3,22 @@ import Coin from '../Coin';
 import './index.css'
 import Swal from 'sweetalert2';
 
+type CriptoDataType = {
+  name: string,
+  id: string,
+  quote: {
+    USD:{
+      price: number,
+      percent_change_1h: number,
+      percent_change_24h: number,
+      percent_change_7d: number
+    }
+  }
+}
+
 const Home = () => {
 
-const [cryptoData, setCryptoData] = useState<any[]>([]);
+const [cryptoData, setCryptoData] = useState<CriptoDataType[]>([]);
 
   useEffect(() => {
 
@@ -40,7 +53,7 @@ const [cryptoData, setCryptoData] = useState<any[]>([]);
             <h1 >Coin Cripto!</h1>
             <div className='content-box'>
       {
-    cryptoData[0] ?   cryptoData.map((element) => <Coin name={element.name} price={element.quote.USD.price} imgSrc={element.id} key={element.id} percent1hours={element.quote.USD.percent_change_1h}  oneHour={element.quote.USD.percent_change_1h} twentFHour={element.quote.USD.percent_change_24h} sevenDays={element.quote.USD.percent_change_7d} /> ) : 'elemgento nao encontrado'
+    cryptoData[0] ?   cryptoData.map((element) => <Coin name={element.name} price={ element.quote.USD.price } imgSrc={element.id} key={element.id} percent1hours={element.quote.USD.percent_change_1h}  oneHour={element.quote.USD.percent_change_1h} twentFHour={element.quote.USD.percent_change_24h} sevenDays={element.quote.USD.percent_change_7d} /> ) : 'elemgento nao encontrado'
   }
   </div>
     </div>
