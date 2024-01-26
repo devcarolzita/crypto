@@ -24,7 +24,7 @@ const [cryptoData, setCryptoData] = useState<CriptoDataType[]>([]);
 
     const fetchData = async () => {
       try {
-        const response = await fetch('https://crypto-r8xikfy4c-caabeatriz.vercel.app/');
+        const response = await fetch('https://crypto-alpha-three.vercel.app/');
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
