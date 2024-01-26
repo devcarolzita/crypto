@@ -32,6 +32,8 @@ const PageCoin = () => {
         setNewRequisi(true);
       }
     } catch (error) {
+      console.log(error);
+      
       Swal.fire({
         icon: "error",
         title: "Oops...",
