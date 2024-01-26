@@ -35,6 +35,8 @@ const [cryptoData, setCryptoData] = useState<CriptoDataType[]>([]);
       
 
       } catch (error) {
+        console.log(error);
+        
         Swal.fire({
           icon: "error",
           title: "Oops...",

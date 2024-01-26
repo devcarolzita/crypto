@@ -45,10 +45,9 @@
 //   console.log(`Server is running at http://localhost:${PORT}`);
 // });
 
-const express = require('express');
-const fetch = require('node-fetch');
-const dotenv = require('dotenv');
-
+import fetch from 'node-fetch';
+import express from 'express';
+import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
@@ -73,6 +72,7 @@ app.use('/', async (req, res) => {
     }
 
     const json = await response.json();
+    console.log(json);
     res.json(json);
   } catch (ex) {
     console.error('Error fetching data from CoinMarketCap API:', ex);
