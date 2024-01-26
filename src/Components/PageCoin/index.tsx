@@ -21,6 +21,8 @@ const PageCoin = () => {
 
   
   const fetchNews = async () => {
+    console.log('teste de api');
+    
     try {
       const resposta = await fetch(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${API_NEWS}`)
       const dados = await resposta.json();
